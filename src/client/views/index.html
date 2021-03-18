@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Weather Journal</title>
+<link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class ="headline">
+      Travel Inspiration App
+    </div>
+  </header>
+
+  <!-- App -->
+  <div id = "app">
+    <!-- City -->
+    <div class ="holder city">
+      <label for="city">Enter a city you'd like to visit!</label>
+      <input type="text" id="city" placeholder="enter city here">
+    </div>
+
+    <!-- Date -->
+    <div class ="holder date">
+      <label for="date">When do you want to travel?</label>
+      <input type="date" id="date" placeholder="MM/DD/YYYY">
+    </div>
+    
+    <!-- Button -->
+    <div>
+      <button id="generate" type="submit">Let's go</button>
+    </div>
+
+    <div class="holder entry">
+      <div id="entryHolder">
+        <!-- Image -->
+        <div id="image" class="image-display">
+          <label for="trip-image">Do you like what you see?</label>
+          <img id="trip-image" src="images/b95dd6499b803f2cc5500ff03d8da4c9.jpg" alt="Image of a palm beach">
+          <figcaption>Image taken from pixabay.com</figcaption>
+        </div>
+        <!-- Country info-->
+        <div id="country"></div>
+        <div id="capital"></div>
+        <div id="subregion"></div>
+        <div id="population"></div>
+        <div id="language"></div>
+        <!-- Weather info-->
+        <div id="city"></div>
+        <div id="date"></div>
+        <div id="temp"></div>
+        <div id="clouds"></div>
+        <div id="wind_spd"></div>
+        <div id="wind_dir"></div>
+        <div id="rh"></div>
+        <div id="vis"></div>
+        <div id="precip"></div>
+        <div id="snow"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="imprint">Imprint</div>
+  </footer>
+
+  <!-- Service Worker -->
+  <script>
+    // Check if service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+  </script>
+
+</body>
+
+</html>
